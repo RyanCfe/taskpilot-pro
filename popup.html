@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskPilot Pro</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">TaskPilot Pro</p>
+        <h1>Ranked AI tools for almost every task.</h1>
+        <p class="sub">Choose task → get ranked tools → copy a strong prompt → open instantly.</p>
+      </div>
+    </header>
+
+    <div class="quick-row" id="quickRow"></div>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="tools">Tools</button>
+      <button class="tab" data-tab="prompt">Prompt Builder</button>
+      <button class="tab" data-tab="launch">Launch Guard</button>
+      <button class="tab" data-tab="favorites">Saved</button>
+    </nav>
+
+    <section id="toolsView" class="view active">
+      <div class="search-wrap">
+        <input id="searchInput" type="text" placeholder="Search: cursor, ai detector, maths, research paper, books..." />
+      </div>
+
+      <section id="categoriesBlock">
+        <div class="section-title">
+          <h2>What do you want to do?</h2>
+          <span id="categoryCount"></span>
+        </div>
+        <div id="categoryGrid" class="grid"></div>
+      </section>
+
+      <section id="taskSection" class="hidden">
+        <div class="section-header">
+          <h2 id="selectedCategoryTitle">Tasks</h2>
+          <button id="backToCategories" class="ghost">Back</button>
+        </div>
+        <div id="taskList" class="list"></div>
+      </section>
+
+      <section id="toolSection" class="hidden">
+        <div class="section-header">
+          <h2 id="selectedTaskTitle">Tools</h2>
+          <button id="backToTasks" class="ghost">Back</button>
+        </div>
+
+        <div id="riskBox" class="risk-box"></div>
+
+        <div class="prompt-box">
+          <div class="prompt-top">
+            <p class="label">Prompt</p>
+            <button id="favoriteTaskBtn" class="ghost small">☆ Save</button>
+          </div>
+          <textarea id="promptText"></textarea>
+          <div class="button-row">
+            <button id="copyPromptBtn">Copy Prompt</button>
+            <button id="copyOpenFirstBtn" class="secondary">Copy + Open #1</button>
+          </div>
+        </div>
+
+        <p class="muted">Rank = best fit for this task, not absolute best tool overall.</p>
+        <div id="toolList" class="list"></div>
+      </section>
+    </section>
+
+    <section id="promptView" class="view">
+      <div class="builder-card">
+        <h2>Smart Prompt Builder</h2>
+        <p class="muted">Build a better prompt instead of using generic “do this” prompts.</p>
+
+        <label>Task</label>
+        <select id="builderTask">
+          <option value="explain">Explain something</option>
+          <option value="code">Build/fix code</option>
+          <option value="ppt">Create PPT</option>
+          <option value="research">Research with sources</option>
+          <option value="math">Solve math step-by-step</option>
+          <option value="resume">Improve resume</option>
+          <option value="shopping">Compare products</option>
+          <option value="trading">Analyze market idea</option>
+          <option value="security">Security review</option>
+        </select>
+
+        <label>My input/topic</label>
+        <textarea id="builderInput" placeholder="Paste your topic, question, code error, product, or idea..."></textarea>
+
+        <label>Output style</label>
+        <select id="builderStyle">
+          <option value="simple">Simple and beginner-friendly</option>
+          <option value="professional">Professional and polished</option>
+          <option value="exam">Exam-ready step-by-step</option>
+          <option value="action">Action plan / checklist</option>
+        </select>
+
+        <button id="buildPromptBtn">Generate Prompt</button>
+
+        <div class="prompt-box">
+          <p class="label">Generated prompt</p>
+          <textarea id="builtPrompt"></textarea>
+          <div class="button-row">
+            <button id="copyBuiltPrompt">Copy</button>
+            <button id="openBuiltChat" class="secondary">Open ChatGPT</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="launchView" class="view">
+      <div class="launch-head">
+        <h2>Launch Guard</h2>
+        <p>Security/privacy checklist for people shipping fast.</p>
+        <div class="progress-wrap">
+          <div class="progress-label"><span id="progressText">0/0 done</span><button id="resetChecklist" class="ghost small">Reset</button></div>
+          <div class="progress-bar"><div id="progressFill"></div></div>
+        </div>
+      </div>
+      <div id="checklist" class="checklist"></div>
+    </section>
+
+    <section id="favoritesView" class="view">
+      <div class="section-header">
+        <h2>Saved</h2>
+        <button id="clearFavorites" class="ghost">Clear</button>
+      </div>
+      <p class="muted">Saved tasks and prompts stay locally in your browser.</p>
+      <div id="favoritesList" class="list"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast">Copied!</div>
+  <script src="data.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
