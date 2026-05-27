@@ -1,5 +1,6 @@
 import { Header } from "@/components/landing/header"
 import { Hero } from "@/components/landing/hero"
+import { ProblemSection } from "@/components/landing/problem-section"
 import { Features } from "@/components/landing/features"
 import { InstallSection } from "@/components/landing/install-section"
 import { DemoSection } from "@/components/landing/demo-section"
@@ -13,6 +14,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <ProblemSection />
         <Features />
         <InstallSection />
         <DemoSection />

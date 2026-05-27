@@ -1,5 +1,28 @@
 import { Card } from "@/components/ui/card"
-import { Play, ChevronRight } from "lucide-react"
+import { Trophy, Sparkles, MousePointerClick, Shield, ImageIcon } from "lucide-react"
+
+const demoScreens = [
+  {
+    icon: Trophy,
+    title: "Tool Ranking Screen",
+    description: "See AI tools ranked by task category",
+  },
+  {
+    icon: Sparkles,
+    title: "Prompt Builder",
+    description: "Copy optimized prompts instantly",
+  },
+  {
+    icon: MousePointerClick,
+    title: "Right-Click Actions",
+    description: "Launch AI tools from any page",
+  },
+  {
+    icon: Shield,
+    title: "Launch Guard",
+    description: "Security checklist before launch",
+  },
+]
 
 export function DemoSection() {
   return (
@@ -14,63 +37,30 @@ export function DemoSection() {
           </p>
         </div>
 
-        <Card className="relative overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm">
-          {/* Browser mockup header */}
-          <div className="flex items-center gap-2 border-b border-border/50 bg-muted/30 px-4 py-3">
-            <div className="flex gap-1.5">
-              <div className="h-3 w-3 rounded-full bg-destructive/60" />
-              <div className="h-3 w-3 rounded-full bg-chart-4/60" />
-              <div className="h-3 w-3 rounded-full bg-primary/60" />
-            </div>
-            <div className="ml-4 flex-1">
-              <div className="mx-auto flex max-w-md items-center gap-2 rounded-md bg-background/50 px-3 py-1.5 text-sm text-muted-foreground">
-                <div className="h-4 w-4 rounded-full bg-primary/20" />
-                <span>chrome://extensions</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Demo content placeholder */}
-          <div className="relative aspect-video bg-gradient-to-br from-card via-muted/20 to-card">
-            {/* Extension popup mockup */}
-            <div className="absolute right-8 top-8 w-72 rounded-lg border border-border/50 bg-card shadow-2xl">
-              <div className="border-b border-border/50 p-3">
-                <div className="flex items-center gap-2">
-                  <div className="h-6 w-6 rounded bg-gradient-to-br from-primary to-accent" />
-                  <span className="font-semibold text-foreground">TaskPilot Pro</span>
-                </div>
-              </div>
-              <div className="space-y-2 p-3">
-                <div className="rounded-md bg-muted/50 p-2 text-xs text-muted-foreground">
-                  Select a task category...
-                </div>
-                {["Writing", "Coding", "Research", "Math"].map((task, i) => (
-                  <div
-                    key={task}
-                    className={`flex items-center justify-between rounded-md px-3 py-2 text-sm ${
-                      i === 0
-                        ? "bg-primary/10 text-primary"
-                        : "text-muted-foreground hover:bg-muted/50"
-                    }`}
-                  >
-                    <span>{task}</span>
-                    <ChevronRight className="h-4 w-4" />
+        <div className="grid gap-6 sm:grid-cols-2">
+          {demoScreens.map((screen) => (
+            <Card
+              key={screen.title}
+              className="group relative overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm transition-all hover:border-primary/50"
+            >
+              <div className="aspect-video bg-gradient-to-br from-muted/30 via-card to-muted/20 p-6">
+                <div className="flex h-full flex-col items-center justify-center gap-4 rounded-lg border-2 border-dashed border-border/50 bg-background/30">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <screen.icon className="h-8 w-8" />
                   </div>
-                ))}
+                  <div className="flex items-center gap-2 text-muted-foreground">
+                    <ImageIcon className="h-4 w-4" />
+                    <span className="text-sm">Screenshot / GIF placeholder</span>
+                  </div>
+                </div>
               </div>
-            </div>
-
-            {/* Play button overlay */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <button className="group flex h-20 w-20 items-center justify-center rounded-full bg-primary/90 text-primary-foreground shadow-lg transition-all hover:bg-primary hover:scale-105">
-                <Play className="h-8 w-8 translate-x-0.5" />
-              </button>
-            </div>
-
-            {/* Bottom gradient fade */}
-            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-card to-transparent" />
-          </div>
-        </Card>
+              <div className="border-t border-border/50 p-4">
+                <h3 className="font-semibold text-foreground">{screen.title}</h3>
+                <p className="text-sm text-muted-foreground">{screen.description}</p>
+              </div>
+            </Card>
+          ))}
+        </div>
       </div>
     </section>
   )

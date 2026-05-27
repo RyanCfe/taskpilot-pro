@@ -20,7 +20,7 @@ export function PrivacySection() {
             </h2>
 
             <p className="mx-auto mb-12 max-w-xl text-center text-lg text-muted-foreground">
-              No backend. No tracking. Saved data stays local.
+              No backend. No tracking. No account. Saved data stays local in your browser.
             </p>
 
             <div className="grid gap-6 sm:grid-cols-3">

@@ -6,6 +6,7 @@ import {
   BookOpen,
   Code2,
   Shield,
+  Newspaper,
 } from "lucide-react"
 
 const features = [
@@ -37,13 +38,19 @@ const features = [
     icon: Code2,
     title: "Coding Tools Integration",
     description:
-      "Quick access to Cursor, Windsurf, Copilot, Blackbox, and more. Switch between coding assistants seamlessly.",
+      "Quick access to Cursor, Windsurf, Copilot, Blackbox, Replit, Bolt, Lovable, and v0. Switch between coding assistants seamlessly.",
+  },
+  {
+    icon: Newspaper,
+    title: "News, Shopping & Trading",
+    description:
+      "Quick launch tools for news summaries, shopping comparisons, trading insights, and security checks.",
   },
   {
     icon: Shield,
-    title: "Launch Guard Security",
+    title: "Privacy-First Local Storage",
     description:
-      "Built-in security checklist before launching any AI tool. Know exactly what data you are sharing.",
+      "No backend, no tracking, no account required. Your saved data stays local in your browser, always.",
   },
 ]
 

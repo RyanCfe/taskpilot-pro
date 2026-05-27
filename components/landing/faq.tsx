@@ -9,34 +9,29 @@ import {
 
 const faqs = [
   {
-    question: "What is TaskPilot Pro?",
-    answer:
-      "TaskPilot Pro is a Chrome extension that helps you find the best AI tools for any task. It ranks AI tools by task category, provides optimized prompts, and lets you launch into any AI tool with one click.",
-  },
-  {
-    question: "Is TaskPilot Pro free?",
+    question: "Is it free?",
     answer:
       "Yes, TaskPilot Pro is completely free and open source. You can download it from GitHub and use all features without any cost or subscriptions.",
   },
   {
-    question: "Does it collect my data?",
+    question: "Is it on Chrome Web Store?",
+    answer:
+      "Not yet. TaskPilot Pro is currently available as a manual install from GitHub. We are working on getting it published to the Chrome Web Store soon.",
+  },
+  {
+    question: "Does it collect data?",
     answer:
       "No. TaskPilot Pro is privacy-first by design. It has no backend, no tracking, and no data collection. Everything runs locally in your browser, and your preferences stay on your device.",
   },
   {
-    question: "Which AI tools are supported?",
+    question: "How do I install it?",
     answer:
-      "TaskPilot Pro supports all major AI tools including ChatGPT, Claude, Gemini, Perplexity, and coding assistants like Cursor, Windsurf, Copilot, and Blackbox. We regularly add new tools based on community feedback.",
+      "Download the ZIP from GitHub, unzip it, go to chrome://extensions/, turn on Developer Mode, click Load unpacked, and select the unzipped TaskPilot Pro folder. That's it!",
   },
   {
-    question: "How does the Smart Prompt Builder work?",
+    question: "Can I suggest tools?",
     answer:
-      "The Smart Prompt Builder provides pre-optimized prompt templates for common tasks. Select your task category, choose a prompt template, customize if needed, and copy it with one click. These prompts are designed to get better results from AI tools.",
-  },
-  {
-    question: "Can I contribute to the project?",
-    answer:
-      "Absolutely! TaskPilot Pro is open source on GitHub. You can contribute by adding new AI tools, improving prompts, fixing bugs, or suggesting features. Check out our GitHub repository for contribution guidelines.",
+      "Absolutely! TaskPilot Pro is open source on GitHub. You can contribute by suggesting new AI tools, improving prompts, fixing bugs, or adding features. Check out our GitHub repository to get started.",
   },
 ]
 
